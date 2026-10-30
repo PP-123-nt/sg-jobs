@@ -7,11 +7,11 @@
 5. Create job_raw SQL table
 6. Create job_rawdf panda df (for data checking using python code)
 7. Data check
-    a) max/min/average salary: with invalid values (max salary $25M)
-    b) occupationId: all blank with no record
-    c) 3988 rows has no records in all columns
-    d) min. experience year: max is 88
-    e) no. of vacancy: max is 999
+   - a) max/min/average salary: with invalid values (max salary $25M)
+   - b) occupationId: all blank with no record
+   - c) 3988 rows has no records in all columns
+   - d) min. experience year: max is 88
+   - e) no. of vacancy: max is 999
 8. Create job_clean SQL table from job_raw table, exclude 3988 rows without record and drop occupationId column
 
 
