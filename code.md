@@ -47,7 +47,7 @@ print("✅ Database and DataFrames updated with the latest data!")
 
 
 
-
+<br>
 
 # 1. keep 1st category (primary_category)
 # 使用 try_cast 防止因存在格式错误的 JSON 而中断
@@ -95,28 +95,3 @@ jobcon.execute("DROP TABLE IF EXISTS jobdf")
 print("Table 'jobdf' deleted successfully.")
 
 
-import pandas as pd
-import numpy as np
-import duckdb
-
-import duckdb
-
-# 1. Connect to DuckDB (in-memory database)
-jobcon = duckdb.connect()
-
-# 2. Create new/replace table jobdf directly from the CSV (Bypasses Pandas RAM limits entirely!)
-jobcon.execute("""
-    CREATE OR REPLACE TABLE job_raw AS 
-    SELECT * FROM read_csv_auto('SGJobData.csv')
-""")
-
-print("Loading 1M rows directly into DuckDB...")
-print("✅ DuckDB table 'job_raw' created successfully!")
-
-# Verify the table exists inside DuckDB, job_raw is SQL table created (not panda df)
-row_count = jobcon.execute("SELECT COUNT(*) FROM job_raw").fetchone()[0]
-print(f"Total rows in DuckDB: {row_count:,}")
-
-
-# Ask DuckDB for the first 5 rows, .df() convert jobdf SQL table to a temp pandas df for display purposes
-display(jobcon.execute("SELECT * FROM job_raw LIMIT 5").df())
