@@ -12,8 +12,22 @@
    - c) 3988 rows has no records in all columns
    - d) min. experience year: max is 88
    - e) no. of vacancy: max is 999
+   - f) 2022-10 to 2023-04 are probably a ramp-up as posting starts from 172 - 33K/mth, 2023-05 onwards posting are stabilize at the range of 60K - 84K
 8. Create job_clean SQL table from job_raw table, exclude 3988 rows without record and drop occupationId column
 
+
+**Analysis:**
+1. Data Range: 2023-05 to 2024-05
+2. Group Employment Types? 
+    - Permanent/Full Time
+    - Part Time/Temporary
+    - Freelance/Flexi-work
+    - Internship/Attachment
+    - Contract
+3. Salary Analysis: for Permanet/Full Time only, set criteria to replace outlier with min/max salary median value
+4. Closed position: with no. of application by employment type, position level, no. of views
+5. High Views and Application Analysis: reason (salary? position level? employment type?)
+6. Category: if want to do analsis on this need to parse to split with multiple category per jobid
 
 
 
