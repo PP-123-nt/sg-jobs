@@ -1,0 +1,13 @@
+# Ignore large data files
+*.csv
+*.zip
+*.db
+*.duckdb
+
+# Ignore the weird Windows downloaded file
+*Zone.Identifier
+
+# Ignore Python/Jupyter junk
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
